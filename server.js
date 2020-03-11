@@ -5,8 +5,6 @@ const fetch = require('node-fetch');
 const app = express()
 const port = process.env.PORT || 8080
 
-const maxValueObject = {value: null, lastFetched: null}
-
 const randIntGen = (max, min) => Math.floor(Math.random() * (max - min + 1) + min)
 
 class Server {
