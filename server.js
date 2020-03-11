@@ -11,13 +11,6 @@ class Server {
     this.start()
   }
 
-  getMax(url){
-  }
-
-  randomInteger(max, min) {
-    return Math.floor(Math.random() * (max - min + 1) + min)
-  }
-
   initExpressMiddleware() {
     app.use(bodyParser.urlencoded({extended: true}))
   }
@@ -44,9 +37,13 @@ class Server {
     app.get('/', (req, res) => res.sendFile(__dirname + "/static/index.html"))
   }
 
-    start() {
-      app.listen(port, () => console.log("Server started on port " + port))
-    }
+  randomInteger(max, min) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
+
+  start() {
+    app.listen(port, () => console.log("Server started on port " + port))
+  }
 }
 
 new Server()
