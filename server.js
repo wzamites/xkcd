@@ -1,18 +1,12 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 const fetch = require('node-fetch');
 const app = express()
 const port = process.env.PORT || 8080
 
 class Server {
   constructor() {
-    this.initExpressMiddleware()
     this.initRoutes()
     this.start()
-  }
-
-  initExpressMiddleware() {
-    app.use(bodyParser.urlencoded({extended: true}))
   }
 
   initRoutes() {
